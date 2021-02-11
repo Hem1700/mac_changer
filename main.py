@@ -1,8 +1,17 @@
 #!/usr/bin/env python
 
 import subprocess
-interface = input("interface > ")
-new_mac = input("new MAC > ")
+import optparse
+
+parser = optparse.OptionParser()
+parser.add_option("-i", "--interface", dest="interface", help="Interface to change its MAC address")
+parser.add_option("-m" , "--mac" , dest="new_mac" , help = "New MAC address")
+
+(options, argument)= parser.parse_args()
+
+interface = options.interface
+new_mac = options.new_mac
+
 print("[+] Changing MAC Address for " + interface + " to" + new_mac)
 # subprocess.call("ifconfig " + interface + " down ", shell=True)
 # subprocess.call("ifconfig " + interface + " hw ether " + new_mac, shell=True)
