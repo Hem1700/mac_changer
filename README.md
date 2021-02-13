@@ -4,5 +4,5 @@
 
 
 ##### Command for help
-##### python3 mach_changer.py --help
+##### python3 mac_changer.py --help
 
